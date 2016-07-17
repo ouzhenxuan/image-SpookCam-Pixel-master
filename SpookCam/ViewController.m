@@ -23,6 +23,7 @@
 
 @property (strong, nonatomic) UIImagePickerController * imagePickerController;
 @property (strong, nonatomic) UIImage * workingImage;
+@property (strong, nonatomic) UIImageView * showImageView;
 
 @end
 
@@ -33,6 +34,14 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+    
+    
+    
+    self.view.backgroundColor = [UIColor greenColor];
+    _showImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, [UIScreen mainScreen].bounds.size.height)];
+    
+    [self.view addSubview:_showImageView];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -60,7 +69,7 @@
 }
 
 - (IBAction)savePhoto:(UIBarButtonItem *)sender {
-    UIImage * image = [UIImage imageNamed:@"ghost"];
+    UIImage * image = [UIImage imageNamed:@"ghost1"];
     CGImageRef inputCGImage = [image CGImage];
     NSUInteger width =                 CGImageGetWidth(inputCGImage);
     NSUInteger height = CGImageGetHeight(inputCGImage);
@@ -77,23 +86,68 @@
     CGColorSpaceRef colorSpace =     CGColorSpaceCreateDeviceRGB();
     CGContextRef context =     CGBitmapContextCreate(pixels, width, height,     bitsPerComponent, bytesPerRow, colorSpace,     kCGImageAlphaPremultipliedLast |     kCGBitmapByteOrder32Big);
     
+    
+  
+    
+    
+    
+    
     // 4.
     CGContextDrawImage(context, CGRectMake(0,     0, width, height), inputCGImage);
     
-    NSLog(@"Brightness of image:");
-    // 2.
-    UInt32 * currentPixel = pixels;
+    int sum = 0;
+    
+    // 3. Convert the image to Black & White
     for (NSUInteger j = 0; j < height; j++) {
         for (NSUInteger i = 0; i < width; i++) {
-            // 3.
+            UInt32 * currentPixel = pixels + (j * width) + i;
             UInt32 color = *currentPixel;
-            printf("%3.0f ",     (R(color)+G(color)+B(color))/3.0);
-            // 4.
-            currentPixel++; 
-        } 
-        printf("\n"); 
+            
+            //      printf("%3.0f ",     (R(color)+G(color)+B(color))/3.0);
+            // Average of RGB = greyscale
+            UInt32 averageColor = (R(color) + G(color) + B(color)) / 3.0;
+            UInt32 red = R(color);
+            UInt32 blue = G(color);
+            UInt32 green = B(color);
+            UInt32 ap = A(color);
+            
+            
+            
+            
+            if (red>220&blue<100&green<100) {
+                
+                *currentPixel = 0;
+            }else{
+                sum++;
+            
+            }
+            
+//            if (averageColor-89<1) {
+//            }
+            
+        }
     }
     
+    
+//    NSLog(@"Brightness of image:");
+//    // 2.
+//    UInt32 * currentPixel = pixels;
+//    for (NSUInteger j = 0; j < height; j++) {
+//        for (NSUInteger i = 0; i < width; i++) {
+//            // 3.
+//            UInt32 color = *currentPixel;
+//            printf("%3.0f ",     (R(color)+G(color)+B(color))/3.0);
+//            // 4.
+//            currentPixel++; 
+//        } 
+//        printf("\n"); 
+//    }
+    
+    
+    CGImageRef newCGImage = CGBitmapContextCreateImage(context);
+    
+    _showImageView.image = [UIImage imageWithCGImage:newCGImage];
+    [self.view sendSubviewToBack:_showImageView];
     
     // 5. Cleanup
     CGColorSpaceRelease(colorSpace); 

@@ -24,6 +24,7 @@
 		84FC4D3418B7F33B00B764C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FC4D1318B7F33B00B764C0 /* UIKit.framework */; };
 		84FC4D3C18B7F33B00B764C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84FC4D3A18B7F33B00B764C0 /* InfoPlist.strings */; };
 		84FC4D3E18B7F33B00B764C0 /* SpookCamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC4D3D18B7F33B00B764C0 /* SpookCamTests.m */; };
+		F54541EC1D3BA5C500AFE45D /* ghost1.png in Resources */ = {isa = PBXBuildFile; fileRef = F54541EB1D3BA5C500AFE45D /* ghost1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		84FC4D3918B7F33B00B764C0 /* SpookCamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpookCamTests-Info.plist"; sourceTree = "<group>"; };
 		84FC4D3B18B7F33B00B764C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84FC4D3D18B7F33B00B764C0 /* SpookCamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpookCamTests.m; sourceTree = "<group>"; };
+		F54541EB1D3BA5C500AFE45D /* ghost1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghost1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				04CF99DF18DA8D7B0070E211 /* UIImage+OrientationFix.h */,
 				04CF99E018DA8D7B0070E211 /* UIImage+OrientationFix.m */,
 				04F01BCE18D5339200A523ED /* ghost.png */,
+				F54541EB1D3BA5C500AFE45D /* ghost1.png */,
 				84FC4D2A18B7F33B00B764C0 /* Images.xcassets */,
 				84FC4D1618B7F33B00B764C0 /* Supporting Files */,
 			);
@@ -244,6 +247,7 @@
 				04F01BD018D5339200A523ED /* ghost.png in Resources */,
 				84FC4D2318B7F33B00B764C0 /* Main_iPhone.storyboard in Resources */,
 				84FC4D1A18B7F33B00B764C0 /* InfoPlist.strings in Resources */,
+				F54541EC1D3BA5C500AFE45D /* ghost1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
