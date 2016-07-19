@@ -122,7 +122,7 @@
       UInt32 * currentPixel = inputPixels + (j * inputWidth) + i;
       UInt32 color = *currentPixel;
       
-//      printf("%3.0f ",     (R(color)+G(color)+B(color))/3.0);
+      printf("%3.0f ",     (R(color)+G(color)+B(color))/3.0);
       // Average of RGB = greyscale
       UInt32 averageColor = (R(color) + G(color) + B(color)) / 3.0;
       

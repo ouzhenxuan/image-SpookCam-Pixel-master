@@ -16,9 +16,10 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "-processUsingPixels:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -33,7 +34,7 @@
             startingLineNumber = "106"
             endingLineNumber = "106"
             landmarkName = "-processUsingPixels:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -48,9 +49,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "-savePhoto:"
-            landmarkType = "5">
+            landmarkName = "@implementation ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> parent of ae686bb... how to handle the image
    </Breakpoints>
 </Bucket>
